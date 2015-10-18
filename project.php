@@ -75,6 +75,7 @@ function jpak_project_metaboxes() {
 
     $prefix = '_jpak_project_';
 
+    // Project Details Box
     $cmb = new_cmb2_box( array(
         'id'            => 'project_details',
         'title'         => __( 'Project Details', 'cmb2' ),
@@ -84,36 +85,29 @@ function jpak_project_metaboxes() {
         'show_names'    => true, // Show field names on the left
     ) );
 
-    // Regular text field
+    // Color Picker
     $cmb->add_field( array(
-        'name'       => __( 'Test Text', 'cmb2' ),
-        'desc'       => __( 'field description (optional)', 'cmb2' ),
-        'id'         => $prefix . 'text',
+        'name'    => 'Project Color',
+        'id'      => $prefix . 'color',
+        'type'    => 'colorpicker',
+        'default' => '#ffffff',
+    ) );
+
+    // Features
+    $cmb->add_field( array(
+        'name'       => __( 'Features', 'cmb2' ),
+        'id'         => $prefix . 'features',
         'type'       => 'text',
-        'show_on_cb' => 'cmb2_hide_if_no_cats', // function should return a bool value
-        // 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
-        // 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
-        // 'on_front'        => false, // Optionally designate a field to wp-admin only
-        // 'repeatable'      => true,
+        'repeatable' => true,
     ) );
 
-    // URL text field
+    // Live URL
     $cmb->add_field( array(
-        'name' => __( 'Website URL', 'cmb2' ),
-        'desc' => __( 'field description (optional)', 'cmb2' ),
-        'id'   => $prefix . 'url',
+        'name' => __( 'Live Site URL', 'cmb2' ),
+        'desc' => __( 'For button if project type is "Website"', 'cmb2' ),
+        'id'   => $prefix . 'live_url',
         'type' => 'text_url',
-        // 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
-        // 'repeatable' => true,
-    ) );
-
-    // Email text field
-    $cmb->add_field( array(
-        'name' => __( 'Test Text Email', 'cmb2' ),
-        'desc' => __( 'field description (optional)', 'cmb2' ),
-        'id'   => $prefix . 'email',
-        'type' => 'text_email',
-        // 'repeatable' => true,
+        'protocols' => array( 'http', 'https' ), // Array of allowed protocols
     ) );
 
 } // jpak_project_metaboxes()
