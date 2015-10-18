@@ -55,8 +55,8 @@ remove_action( 'genesis_after_header', 'jpak_mini_hero' );
 //  GET PROJECT META  //
 //====================//
 
-$project_meta;
-$project_meta = jpak_project_get_meta( $post->ID );
+global $jpak_project_meta;
+$jpak_project_meta = jpak_project_get_meta( $post->ID );
 
 
 
@@ -74,7 +74,30 @@ add_action( 'genesis_after_header', 'jpak_project_single_background_previews' );
  * @since 1.0.0
  */
 function jpak_project_single_background_previews() {
-    
+
+    // Get Project Meta
+    $project_meta = $GLOBALS['jpak_project_meta'];
+
+    // Prep Needed Vars
+    $color = $project_meta['color'];
+
+
+    // project-background-previews Inline Styling
+    $background_previews_style = 'background-color: ' . $color . ';';
+
+
+    // Background & Previews
+    echo '<div class="project-background-previews" style="' . $background_previews_style . '">';
+
+        // Wrap for Images
+        echo '<div class="wrap">';
+
+
+
+        echo '</div>'; // .wrap (for images)
+
+    echo '</div>'; // .project-background-previews
+
 } // jpak_project_single_background_previews()
 
 
