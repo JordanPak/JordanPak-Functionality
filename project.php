@@ -173,6 +173,25 @@ function jpak_project_metaboxes() {
 
 
 /**
+ * Get Project Meta
+ *
+ * Get Project Post Meta Array
+ *
+ * @since 1.0.0
+ *
+ * @see jpak_project
+ *
+ * @param string $project Project post ID.
+ * @param bool $is_archive Whether or not meta needed is for archive template.
+ * @return array $project_meta Project post meta.
+ */
+function jpak_project_get_meta( $project, $is_archive = false ) {
+    
+} // jpak_project_get_meta()
+
+
+
+/**
  * Get Project Single Template
  *
  * Loads the single-jpak-project template as needed.
