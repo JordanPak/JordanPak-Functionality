@@ -25,12 +25,15 @@
 //-- ADD BODY CLASSES --//
  add_filter( 'body_class', 'jpak_project_single_body_classes' );
  /**
-  * JordanPak Functionality - Full Width Content
+  * JordanPak Functionality - Project Single Body Classes
   *
-  * Adds "full-width-content" body class to page
+  * Adds "full-width-content", "page", and "no-mini-hero" body classes to page
   *
   * @package JordanPak-Functionality
   * @since 1.0.0
+  *
+  * @param string $classes Array of body classes
+  * @return string $classes Array of body classes
   */
  function jpak_project_single_body_classes( $classes ) {
 
@@ -61,6 +64,18 @@ $project_meta = jpak_project_get_meta( $post->ID );
 //  PROJECT ELEMENTS  //
 //====================//
 
+add_action( 'genesis_after_header', 'jpak_project_single_background_previews' );
+/**
+ * JordanPak Functionality - Project Single Background & Previews
+ *
+ * Configures top part of page with color theme and desktop/mobile preview images.
+ *
+ * @package JordanPak-Functionality
+ * @since 1.0.0
+ */
+function jpak_project_single_background_previews() {
+    
+} // jpak_project_single_background_previews()
 
 
 //-- LOAD FRAMEWORK --//
