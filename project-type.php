@@ -39,7 +39,7 @@
     	);
     	$args = array(
     		'labels'                     => $labels,
-    		'hierarchical'               => false,
+    		'hierarchical'               => true,
     		'public'                     => true,
     		'show_ui'                    => true,
     		'show_admin_column'          => true,
@@ -49,7 +49,7 @@
     	register_taxonomy( 'jpak_project_type', array( 'jpak_project' ), $args );
 
     }
-    
+
     add_action( 'init', 'jpak_project_type', 0 );
 
 } // if jpak_project_type exists

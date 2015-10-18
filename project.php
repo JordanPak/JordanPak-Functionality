@@ -40,7 +40,7 @@
      		'description'         => __( 'Project with Description, Featured Images/Screenshots, Testimonial, and Feature List', 'text_domain' ),
      		'labels'              => $labels,
      		'supports'            => array( 'title', 'editor', 'thumbnail', ),
-     		'taxonomies'          => array( 'category' ),
+     		'taxonomies'          => array( 'jpak_project_type' ),
      		'hierarchical'        => false,
      		'public'              => true,
      		'show_ui'             => true,
