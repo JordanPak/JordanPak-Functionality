@@ -13,3 +13,4 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 //-- PROJECT --//
 require_once( 'project.php' );
+require_once( 'project-type.php' );
