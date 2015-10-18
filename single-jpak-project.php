@@ -47,6 +47,14 @@
 remove_action( 'genesis_after_header', 'jpak_mini_hero' );
 
 
+// TEST - GET PROJECT META
+add_action('genesis_before_entry_content', 'jpak_meta_test');
+function jpak_meta_test() {
+    $project_meta = jpak_project_get_meta( $post->ID );
+    echo var_dump($project_meta);
+}
+
+
 
 //-- LOAD FRAMEWORK --//
 genesis();
