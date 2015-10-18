@@ -9,6 +9,11 @@
  */
 
 
+//===========================//
+//  CONFIGURE PAGE ELEMENTS  //
+//===========================//
+
+
  //-- REMOVE DEFAULT ELEMENTS --//
  remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
  remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
@@ -17,7 +22,7 @@
  remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
 
 
-
+//-- ADD BODY CLASSES --//
  add_filter( 'body_class', 'jpak_project_single_body_classes' );
  /**
   * JordanPak Functionality - Full Width Content
@@ -31,10 +36,15 @@
 
      $classes[] = 'full-width-content';
      $classes[] = 'page';
+     $classes[] = 'no-mini-hero';
 
      return $classes;
 
  } // jpak_project_single_body_classes
+
+
+//-- REMOVE MINI-HERO --//
+remove_action( 'genesis_after_header', 'jpak_mini_hero' );
 
 
 
