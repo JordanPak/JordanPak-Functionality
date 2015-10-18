@@ -87,26 +87,51 @@ function jpak_project_metaboxes() {
 
     // Color Picker
     $cmb->add_field( array(
-        'name'    => 'Project Color',
-        'id'      => $prefix . 'color',
-        'type'    => 'colorpicker',
-        'default' => '#ffffff',
+        'name'      => 'Project Color',
+        'id'        => $prefix . 'color',
+        'type'      => 'colorpicker',
+        'default'   => '#ffffff',
+        'desc'      => __( 'Used in page background and button accent.', 'cmb2' ),
+    ) );
+
+    // Desktop Preview
+    $cmb->add_field( array(
+        'name'    => 'Desktop Preview Image',
+        'desc'    => 'Upload an image or enter an URL.',
+        'id'      => $prefix . 'desktop_preview',
+        'type'    => 'file',
+        'options' => array(
+            'url' => false, // Hide the text input for the url
+            'add_upload_file_text' => 'Upload Image',
+        ),
+    ) );
+
+    // Mobile Preview
+    $cmb->add_field( array(
+        'name'    => 'Mobile Preview Image',
+        'desc'    => 'Upload an image or enter an URL.',
+        'id'      => $prefix . 'mobile_preview',
+        'type'    => 'file',
+        'options' => array(
+            'url' => false, // Hide the text input for the url
+            'add_upload_file_text' => 'Upload Image',
+        ),
     ) );
 
     // Features
     $cmb->add_field( array(
-        'name'       => __( 'Features', 'cmb2' ),
-        'id'         => $prefix . 'features',
-        'type'       => 'text',
+        'name'      => __( 'Features', 'cmb2' ),
+        'id'        => $prefix . 'features',
+        'type'      => 'text',
         'repeatable' => true,
     ) );
 
     // Live URL
     $cmb->add_field( array(
-        'name' => __( 'Live Site URL', 'cmb2' ),
-        'desc' => __( 'For button if project type is "Website"', 'cmb2' ),
-        'id'   => $prefix . 'live_url',
-        'type' => 'text_url',
+        'name'      => __( 'Live Site URL', 'cmb2' ),
+        'desc'      => __( 'For button if project type is "Website".', 'cmb2' ),
+        'id'        => $prefix . 'live_url',
+        'type'      => 'text_url',
         'protocols' => array( 'http', 'https' ), // Array of allowed protocols
     ) );
 
