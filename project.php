@@ -186,7 +186,29 @@ function jpak_project_metaboxes() {
  * @return array $project_meta Project post meta.
  */
 function jpak_project_get_meta( $project, $is_archive = false ) {
-    
+
+    $project_meta = array();
+
+    // Set Meta ID
+    $meta_id_prefix = '_jpak_project_';
+
+
+    // SINGLE META //
+    if ( $is_archive == false ) {
+
+        $project_meta['color']                  = get_post_meta( $project, $meta_id_prefix . 'color', true );
+        $project_meta['desktop_preview']        = get_post_meta( $project, $meta_id_prefix . 'desktop_preview', true );
+        $project_meta['mobile_preview']         = get_post_meta( $project, $meta_id_prefix . 'mobile_preview', true );
+        $project_meta['features']               = get_post_meta( $project, $meta_id_prefix . 'features', true );
+        $project_meta['live_url']               = get_post_meta( $project, $meta_id_prefix . 'live_url', true );
+        $project_meta['testimonial']            = get_post_meta( $project, $meta_id_prefix . 'testimonial', true );
+        $project_meta['testimonial_name']       = get_post_meta( $project, $meta_id_prefix . 'testimonial_name', true );
+        $project_meta['testimonial_occupation'] = get_post_meta( $project, $meta_id_prefix . 'testimonial_occupation', true );
+
+    } // If $is_archive == false
+
+    return $project_meta;
+
 } // jpak_project_get_meta()
 
 
