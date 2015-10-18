@@ -88,10 +88,10 @@ function jpak_project_metaboxes() {
     // Color Picker
     $cmb->add_field( array(
         'name'      => 'Project Color',
+        'desc'      => __( 'Used in page background and button accent.', 'cmb2' ),
         'id'        => $prefix . 'color',
         'type'      => 'colorpicker',
         'default'   => '#ffffff',
-        'desc'      => __( 'Used in page background and button accent.', 'cmb2' ),
     ) );
 
     // Desktop Preview
@@ -133,6 +133,30 @@ function jpak_project_metaboxes() {
         'id'        => $prefix . 'live_url',
         'type'      => 'text_url',
         'protocols' => array( 'http', 'https' ), // Array of allowed protocols
+    ) );
+
+    // Testimonial
+    $cmb->add_field( array(
+        'name' => 'Testimonial',
+        'desc' => 'Do not add quotation marks.',
+        'id' => $prefix . 'testimonial',
+        'type' => 'textarea_small'
+    ) );
+
+    // Testimonial Name
+    $cmb->add_field( array(
+        'name' => 'Testimonial Name',
+        'desc' => 'Ex: "Jimbo Fisher"',
+        'id' => $prefix . 'testimonial_name',
+        'type' => 'text'
+    ) );
+
+    // Testimonial Occupation
+    $cmb->add_field( array(
+        'name' => 'Testimonial Occupation',
+        'desc' => 'Ex: "Head Football Coach, USF"',
+        'id' => $prefix . 'testimonial_occupation',
+        'type' => 'text'
     ) );
 
 } // jpak_project_metaboxes()
