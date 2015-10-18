@@ -170,3 +170,29 @@ function jpak_project_metaboxes() {
 //====================//
 //  HELPER FUNCTIONS  //
 //====================//
+
+
+/**
+ * Get Project Single Template
+ *
+ * Loads the single-jpak-project template as needed.
+ *
+ * @since 1.0.0
+ *
+ * @see jpak_project
+ *
+ * @param string $single_template Path to template file.
+ * @return string $single_template Path to template file.
+ */
+function jpak_get_project_single_template( $single_template ) {
+
+     global $post;
+
+     if ( $post->post_type == 'jpak_project' ) {
+          $single_template = dirname( __FILE__ ) . '/single-jpak-project.php';
+     }
+
+     return $single_template;
+
+} // jpak_get_project_single_template()
+add_filter( 'single_template', 'jpak_get_project_single_template' );
