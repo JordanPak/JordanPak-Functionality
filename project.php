@@ -160,3 +160,9 @@ function jpak_project_metaboxes() {
     ) );
 
 } // jpak_project_metaboxes()
+
+
+
+//====================//
+//  HELPER FUNCTIONS  //
+//====================//
