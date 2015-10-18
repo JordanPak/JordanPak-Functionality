@@ -9,6 +9,9 @@
  */
 
 
+ //================//
+ //  REGISTER CPT  //
+ //================//
 
  if ( ! function_exists('jpak_project') ) {
 
@@ -60,3 +63,57 @@
     add_action( 'init', 'jpak_project', 0 );
 
 } // if jpak_project()
+
+
+
+//=======================//
+//  REGISTER META BOXES  //
+//=======================//
+
+add_action( 'cmb2_admin_init', 'jpak_project_metaboxes' );
+function jpak_project_metaboxes() {
+
+    $prefix = '_jpak_project_';
+
+    $cmb = new_cmb2_box( array(
+        'id'            => 'project_details',
+        'title'         => __( 'Project Details', 'cmb2' ),
+        'object_types'  => array( 'jpak_project', ), // Post type
+        'context'       => 'normal',
+        'priority'      => 'high',
+        'show_names'    => true, // Show field names on the left
+    ) );
+
+    // Regular text field
+    $cmb->add_field( array(
+        'name'       => __( 'Test Text', 'cmb2' ),
+        'desc'       => __( 'field description (optional)', 'cmb2' ),
+        'id'         => $prefix . 'text',
+        'type'       => 'text',
+        'show_on_cb' => 'cmb2_hide_if_no_cats', // function should return a bool value
+        // 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
+        // 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
+        // 'on_front'        => false, // Optionally designate a field to wp-admin only
+        // 'repeatable'      => true,
+    ) );
+
+    // URL text field
+    $cmb->add_field( array(
+        'name' => __( 'Website URL', 'cmb2' ),
+        'desc' => __( 'field description (optional)', 'cmb2' ),
+        'id'   => $prefix . 'url',
+        'type' => 'text_url',
+        // 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
+        // 'repeatable' => true,
+    ) );
+
+    // Email text field
+    $cmb->add_field( array(
+        'name' => __( 'Test Text Email', 'cmb2' ),
+        'desc' => __( 'field description (optional)', 'cmb2' ),
+        'id'   => $prefix . 'email',
+        'type' => 'text_email',
+        // 'repeatable' => true,
+    ) );
+
+} // jpak_project_metaboxes()
