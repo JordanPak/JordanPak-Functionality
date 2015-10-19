@@ -185,5 +185,20 @@ function jpak_project_header() {
 
 
 
+add_action( 'genesis_entry_content', 'jpak_project_entry_content');
+/**
+ * JordanPak Functionality - Project Content
+ *
+ * Output Project Content & Other Meta
+ *
+ * @package JordanPak-Functionality
+ * @since 1.0.0
+ */
+function jpak_project_entry_content() {
+    echo the_content();
+} // jpak_project_entry_content()
+
+
+
 //-- LOAD FRAMEWORK --//
 genesis();
