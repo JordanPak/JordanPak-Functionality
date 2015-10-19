@@ -197,8 +197,11 @@ add_action( 'genesis_entry_content', 'jpak_project_entry_content');
 function jpak_project_entry_content() {
 
     // Project Meta
-    $project_meta = $GLOBALS['jpak_project_meta'];
-    $features = $project_meta['features'];
+    $project_meta =             $GLOBALS['jpak_project_meta'];
+    $features =                 $project_meta['features'];
+    $testimonial =              $project_meta['testimonial'];
+    $testimonial_name =         $project_meta['testimonial_name'];
+    $testimonial_occupation =   $project_meta['testimonial_occupation'];
 
 
     //-- DESCRIPTION --//
@@ -245,6 +248,30 @@ function jpak_project_entry_content() {
 
     echo '</div>'; // .project-buttons
 
+
+    //-- TESTIMONIAL --//
+    if ( $testimonial ) {
+
+        echo '<div class="project-testimonial">';
+
+            echo '<blockquote>';
+
+                // Testimonial Body
+                echo $testimonial;
+
+                // Name
+                echo '<cite>' . $testimonial_name . '</cite>';
+
+                // Occupation
+                if ( $testimonial_occupation ) {
+                    echo '<span>' . $testimonial_occupation . '</span>';
+                }
+
+            echo '</blockquote>';
+
+        echo '</div>'; // .project-testimonial
+
+    } // if $testiominal
 
 
 } // jpak_project_entry_content()
