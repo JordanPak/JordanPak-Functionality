@@ -165,11 +165,21 @@ add_action( 'genesis_entry_header', 'jpak_project_header' );
  */
 function jpak_project_header() {
 
+    // Project Meta
+    $project_meta = $GLOBALS['jpak_project_meta'];
+    $visit_website = $project_meta['live_url'];
+
+
     // Label
     echo '<p class="project-header-label"><i class="fa fa-pencil"></i>&nbsp; Project</p>';
 
     // Project Title
     echo '<h1 class="entry-title" itemprop="headline">' . get_the_title() . '</h1>';
+
+    // Visit Website Button
+    if ( $visit_website ) {
+        echo '<a class="project-visit-website button button-outline" href="' . $visit_website . '" title="View Live Project" target="_BLANK">Visit Website</a>';
+    }
 
 } // jpak_project_header()
 
