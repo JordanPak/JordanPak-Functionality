@@ -83,18 +83,26 @@ function jpak_project_single_background_previews() {
 
 
     // project-background-previews Inline Styling
-    $background_previews_style = 'background-color: ' . $color . ';';
+    $background_previews_style = 'background-color: #8CC63F'; //'background-color: ' . $color . ';';
 
 
     // Background & Previews
     echo '<div class="project-background-previews" style="' . $background_previews_style . '">';
 
         // Wrap for Images
-        echo '<div class="wrap">';
+        // echo '<div class="wrap">';
 
 
+            echo '<div class="browser-mockup with-tab position-left">
+  <img src="http://placehold.it/1100x700/fff/eee" />
+</div>';
 
-        echo '</div>'; // .wrap (for images)
+            echo '<div class="browser-mockup with-tab position-right">
+  <img src="http://placehold.it/400x650/fff/eee" />
+</div>';
+
+
+        // echo '</div>'; // .wrap (for images)
 
     echo '</div>'; // .project-background-previews
 
