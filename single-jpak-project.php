@@ -196,12 +196,38 @@ add_action( 'genesis_entry_content', 'jpak_project_entry_content');
  */
 function jpak_project_entry_content() {
 
-    //-- PROJECT DESCRIPTION --//
-    echo '<div class="first two-thirds">';
+    // Project Meta
+    $project_meta = $GLOBALS['jpak_project_meta'];
+    $features = $project_meta['features'];
+
+
+    //-- DESCRIPTION --//
+    echo '<div class="project-description">';
         echo the_content();
     echo '</div>';
 
 
+    //-- FEATURES --//
+    if ( $features ) {
+
+        echo '<div class="project-features">';
+
+            echo '<h3>Features</h3>';
+
+            echo '<ul class="big checkmark">';
+
+                foreach ( $features as $feature ) {
+                    echo '<li>' . $feature . '</li>';
+                }
+
+            echo '</ul>';
+
+        echo '</div>'; // .one-third
+
+    } // if $features
+
+
+    echo '<hr>';
 
 } // jpak_project_entry_content()
 
