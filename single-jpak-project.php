@@ -94,8 +94,15 @@ function jpak_project_single_background_previews() {
     // Background & Previews
     echo '<div class="project-background-previews" style="' . $background_previews_style . '">';
 
-        echo jpak_project_browser_mockup( $desktop_preview );
-        echo jpak_project_browser_mockup( $mobile_preview, 'mobile', 'right', false );
+        // If There's a Desktop Preview
+        if ( $desktop_preview ) {
+            echo jpak_project_browser_mockup( $desktop_preview );
+        }
+
+        // If There's a Mobile Preview
+        if ( $mobile_preview ) {
+            echo jpak_project_browser_mockup( $mobile_preview, 'mobile', 'right', false );
+        }
 
     echo '</div>'; // .project-background-previews
 
@@ -113,8 +120,8 @@ add_filter( 'body_class', 'jpak_project_single_body_classes' );
  * @since 1.0.0
  *
  * @param string $src Image SRC Attribute
- * @param string $size Size of mockup (desktop, mobile, full)
- * @param string $position Position of Mockup
+ * @param string $size Size of mockup (desktop, mobile)
+ * @param string $position Position of Mockup (left, right)
  * @param bool $with_tab Include tab in frame
  * @return string $browser_mockup HTML markup of Browser Mockup
  */
@@ -136,9 +143,7 @@ function jpak_project_browser_mockup( $src, $size = 'desktop', $position = 'left
 
     //-- MARKUP --//
     $browser_mockup .= '<div class="' . $mockup_classes . '">';
-
         $browser_mockup .= '<img src="' . $src . '">';
-
     $browser_mockup .= '</div>'; // .browser-mockup
 
 
