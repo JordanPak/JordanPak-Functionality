@@ -101,7 +101,7 @@ function jpak_project_metaboxes() {
     // Desktop Preview
     $cmb->add_field( array(
         'name'    => 'Desktop Preview Image',
-        'desc'    => 'Upload an image or enter an URL.',
+        'desc'    => 'Recommended Size: 1100px x 700px.',
         'id'      => $prefix . 'desktop_preview',
         'type'    => 'file',
         'options' => array(
@@ -113,7 +113,7 @@ function jpak_project_metaboxes() {
     // Mobile Preview
     $cmb->add_field( array(
         'name'    => 'Mobile Preview Image',
-        'desc'    => 'Upload an image or enter an URL.',
+        'desc'    => 'Recommended Size: 400px x 650px.',
         'id'      => $prefix . 'mobile_preview',
         'type'    => 'file',
         'options' => array(
