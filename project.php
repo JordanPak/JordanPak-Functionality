@@ -214,6 +214,33 @@ function jpak_project_get_meta( $project, $is_archive = false ) {
 
 
 /**
+ * Get Project Archive Template
+ *
+ * Loads the archive-jpak-project template as needed.
+ *
+ * @since 1.0.0
+ *
+ * @see jpak_project
+ *
+ * @param string $archive_template Path to template file.
+ * @return string $archive_template Path to template file.
+ */
+function jpak_get_project_archive_template( $archive_template ) {
+
+     global $post;
+
+     if ( $post->post_type == 'jpak_project' ) {
+          $archive_template = dirname( __FILE__ ) . '/archive-jpak-project.php';
+     }
+
+     return $archive_template;
+
+} // jpak_get_project_archive_template()
+add_filter( 'archive_template', 'jpak_get_project_archive_template' );
+
+
+
+/**
  * Get Project Single Template
  *
  * Loads the single-jpak-project template as needed.
