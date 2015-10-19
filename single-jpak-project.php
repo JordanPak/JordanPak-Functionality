@@ -212,7 +212,7 @@ function jpak_project_entry_content() {
 
         echo '<div class="project-features">';
 
-            echo '<h3>Features</h3>';
+            // echo '<h3>Features</h3>';
 
             echo '<ul class="big checkmark">';
 
@@ -227,7 +227,25 @@ function jpak_project_entry_content() {
     } // if $features
 
 
-    echo '<hr>';
+    // clearfix
+    echo '<div class="clearfix"></div>';
+
+
+    //-- PROJECTS & CONTACT BUTTONS --//
+    echo '<div class="project-buttons">';
+
+        // Back to Projects
+        echo '<a class="button button-dark" href="' . site_url() .'/projects"><i class="fa fa-arrow-left"></i>Back to Projects</a>';
+
+        // OR
+        echo '<span>or</span>';
+
+        // Contact
+        echo '<a class="button" href="' . site_url() . '/contact"><i class="fa fa-pencil"></i>Get Your Project Started</a>';
+
+    echo '</div>'; // .project-buttons
+
+
 
 } // jpak_project_entry_content()
 
