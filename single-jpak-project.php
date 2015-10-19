@@ -9,6 +9,7 @@
  */
 
 
+
 //===========================//
 //  CONFIGURE PAGE ELEMENTS  //
 //===========================//
@@ -51,12 +52,14 @@ remove_action( 'genesis_after_header', 'jpak_mini_hero' );
 
 
 
+
 //====================//
 //  GET PROJECT META  //
 //====================//
 
 global $jpak_project_meta;
 $jpak_project_meta = jpak_project_get_meta( $post->ID );
+
 
 
 
@@ -79,34 +82,70 @@ function jpak_project_single_background_previews() {
     $project_meta = $GLOBALS['jpak_project_meta'];
 
     // Prep Needed Vars
-    $color = $project_meta['color'];
+    $color =            $project_meta['color'];
+    $desktop_preview =  $project_meta['desktop_preview'];
+    $mobile_preview =   $project_meta['mobile_preview'];
 
 
     // project-background-previews Inline Styling
-    $background_previews_style = 'background-color: #8CC63F'; //'background-color: ' . $color . ';';
+    $background_previews_style = ''; //'background-color: ' . $color . ';';
 
 
     // Background & Previews
     echo '<div class="project-background-previews" style="' . $background_previews_style . '">';
 
-        // Wrap for Images
-        // echo '<div class="wrap">';
-
-
-            echo '<div class="browser-mockup with-tab position-left">
-  <img src="http://placehold.it/1100x700/fff/eee" />
-</div>';
-
-            echo '<div class="browser-mockup with-tab position-right">
-  <img src="http://placehold.it/400x650/fff/eee" />
-</div>';
-
-
-        // echo '</div>'; // .wrap (for images)
+        echo jpak_project_browser_mockup( $desktop_preview );
+        echo jpak_project_browser_mockup( $mobile_preview, 'mobile', 'right', false );
 
     echo '</div>'; // .project-background-previews
 
 } // jpak_project_single_background_previews()
+
+
+
+add_filter( 'body_class', 'jpak_project_single_body_classes' );
+/**
+ * JordanPak Functionality - Browser Mockup
+ *
+ * Outputs a preview image inside a "Browser Mockup" frame.
+ *
+ * @package JordanPak-Functionality
+ * @since 1.0.0
+ *
+ * @param string $src Image SRC Attribute
+ * @param string $size Size of mockup (desktop, mobile, full)
+ * @param string $position Position of Mockup
+ * @param bool $with_tab Include tab in frame
+ * @return string $browser_mockup HTML markup of Browser Mockup
+ */
+function jpak_project_browser_mockup( $src, $size = 'desktop', $position = 'left', $with_tab = true ) {
+
+    //-- HTML STRING --//
+    $browser_mockup = '';
+
+
+    //-- WRAPPER CLASSES --//
+    $mockup_classes = 'browser-mockup';             // Default
+    $mockup_classes .= ' size-' . $size;            // Size
+    $mockup_classes .= ' position-' . $position;    // Position
+
+    if ( $with_tab ) {
+        $mockup_classes .= ' with-tab';
+    }
+
+
+    //-- MARKUP --//
+    $browser_mockup .= '<div class="' . $mockup_classes . '">';
+
+        $browser_mockup .= '<img src="' . $src . '">';
+
+    $browser_mockup .= '</div>'; // .browser-mockup
+
+
+    return $browser_mockup;
+
+} // jpak_project_browser_mockup()
+
 
 
 //-- LOAD FRAMEWORK --//
