@@ -195,7 +195,14 @@ add_action( 'genesis_entry_content', 'jpak_project_entry_content');
  * @since 1.0.0
  */
 function jpak_project_entry_content() {
-    echo the_content();
+
+    //-- PROJECT DESCRIPTION --//
+    echo '<div class="first two-thirds">';
+        echo the_content();
+    echo '</div>';
+
+
+
 } // jpak_project_entry_content()
 
 
