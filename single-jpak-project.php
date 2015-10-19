@@ -153,5 +153,27 @@ function jpak_project_browser_mockup( $src, $size = 'desktop', $position = 'left
 
 
 
+remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
+add_action( 'genesis_entry_header', 'jpak_project_header' );
+/**
+ * JordanPak Functionality - Project Title
+ *
+ * Output Project Label, Title, and Button.
+ *
+ * @package JordanPak-Functionality
+ * @since 1.0.0
+ */
+function jpak_project_header() {
+
+    // Label
+    echo '<p class="project-header-label"><i class="fa fa-pencil"></i>&nbsp; Project</p>';
+
+    // Project Title
+    echo '<h1 class="entry-title" itemprop="headline">' . get_the_title() . '</h1>';
+
+} // jpak_project_header()
+
+
+
 //-- LOAD FRAMEWORK --//
 genesis();
