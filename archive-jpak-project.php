@@ -23,23 +23,23 @@
 
 
  //-- ADD BODY CLASSES --//
-  add_filter( 'body_class', 'jpak_project_archive_body_classes' );
-  /**
-   * JordanPak Functionality - Project Archive Body Classes
-   *
-   * @package JordanPak-Functionality
-   * @since 1.0.0
-   *
-   * @param string $classes Array of body classes
-   * @return string $classes Array of body classes
-   */
-  function jpak_project_archive_body_classes( $classes ) {
+add_filter( 'body_class', 'jpak_project_archive_body_classes' );
+/**
+* JordanPak Functionality - Project Archive Body Classes
+*
+* @package JordanPak-Functionality
+* @since 1.0.0
+*
+* @param string $classes Array of body classes
+* @return string $classes Array of body classes
+*/
+function jpak_project_archive_body_classes( $classes ) {
 
-      $classes[] = 'full-width-content';
+    $classes[] = 'full-width-content';
 
-      return $classes;
+    return $classes;
 
-  } // jpak_project_archive_body_classes
+} // jpak_project_archive_body_classes
 
 
 //-- LOAD FRAMEWORK --//
