@@ -213,6 +213,22 @@ function jpak_project_get_meta( $project, $is_archive = false ) {
 
 
 
+add_action( 'init', 'jpak_project_image_sizes' );
+/**
+ * Project Image Sizes
+ *
+ * Image Sizes for Grid thumbnails and other stuff.
+ *
+ * @since 1.0.0
+ *
+ * @see jpak_project
+ */
+function jpak_project_image_sizes() {
+    add_image_size('project-grid-thumbnail', 400, 270, TRUE);
+} // jpak_project_image_sizes()
+
+
+
 /**
  * Get Project Archive Template
  *
