@@ -224,7 +224,7 @@ add_action( 'init', 'jpak_project_image_sizes' );
  * @see jpak_project
  */
 function jpak_project_image_sizes() {
-    add_image_size('project-grid-thumbnail', 400, 270, TRUE);
+    add_image_size('project-grid-thumbnail', 600, 380, TRUE);
 } // jpak_project_image_sizes()
 
 
