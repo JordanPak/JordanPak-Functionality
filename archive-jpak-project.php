@@ -15,14 +15,14 @@
 //===========================//
 
 
- //-- REMOVE DEFAULT ELEMENTS --//
- remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
- remove_action( 'genesis_entry_content', 'genesis_do_post_content' );
- remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
- remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
+//-- REMOVE DEFAULT ELEMENTS --//
+remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
+remove_action( 'genesis_entry_content', 'genesis_do_post_content' );
+remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
+remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
 
 
- //-- ADD BODY CLASSES --//
+//-- ADD BODY CLASSES --//
 add_filter( 'body_class', 'jpak_project_archive_body_classes' );
 /**
 * JordanPak Functionality - Project Archive Body Classes
