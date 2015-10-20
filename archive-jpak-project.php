@@ -17,9 +17,7 @@
 
 //-- REMOVE DEFAULT ELEMENTS --//
 remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
-remove_action( 'genesis_entry_content', 'genesis_do_post_content' );
-remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
-remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
+remove_action( 'genesis_loop', 'genesis_do_loop' );
 
 
 //-- ADD BODY CLASSES --//
