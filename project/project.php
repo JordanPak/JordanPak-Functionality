@@ -181,6 +181,23 @@ function jpak_project_metaboxes() {
 
 
 /**
+ * Project CPT Query
+ *
+ * Get Project CPT IDs
+ *
+ * @since 1.0.0
+ *
+ * @see jpak_project
+ *
+ * @param string $project Project post ID.
+ * @return array $project_ids Project Post IDs.
+ */
+ function jpak_project_query() {
+     
+ } // jpak_project_query()
+
+
+/**
  * Get Project Meta
  *
  * Get Project Post Meta Array
