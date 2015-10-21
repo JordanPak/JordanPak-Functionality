@@ -189,11 +189,25 @@ function jpak_project_metaboxes() {
  *
  * @see jpak_project
  *
- * @param string $project Project post ID.
+ * @param int $num Number of Project Post IDs to Return (0 = All).
+ * @param int $num_per_page Number of results per page.
  * @return array $project_ids Project Post IDs.
  */
- function jpak_project_query() {
-     
+ function jpak_project_query( $num = 0, $num_per_page = 12 ) {
+
+     // Query Options
+     $project_args = array(
+         'post_type'        => 'jpak_project',
+         'fields'           => 'ids',
+         'orderby'          => 'meta_value_num',
+         'order'            => 'DSC',
+         'post_count'       => $num,
+         'posts_per_page'   => $num_per_page,
+     );
+
+     // Query
+     return new WP_Query( $project_args );
+
  } // jpak_project_query()
 
 

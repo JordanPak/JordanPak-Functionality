@@ -48,7 +48,7 @@ function jpak_project_archive_body_classes( $classes ) {
 //  CUSTOM PROJECT LOOP  //
 //=======================//
 
-
+var_dump( jpak_project_query() );
 
 
 
