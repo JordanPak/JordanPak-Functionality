@@ -199,10 +199,10 @@ function jpak_project_metaboxes() {
      $project_args = array(
          'post_type'        => 'jpak_project',
          'fields'           => 'ids',
-         'orderby'          => 'meta_value_num',
-         'order'            => 'DSC',
-         'post_count'       => $num,
-         'posts_per_page'   => $num_per_page,
+        //  'orderby'          => 'meta_value_num',
+        //  'order'            => 'DSC',
+         'post_count'       => 10,
+        //  'posts_per_page'   => $num_per_page,
      );
 
      // Query

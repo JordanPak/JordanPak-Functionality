@@ -48,8 +48,24 @@ function jpak_project_archive_body_classes( $classes ) {
 //  CUSTOM PROJECT LOOP  //
 //=======================//
 
-var_dump( jpak_project_query() );
+add_action( 'genesis_before_loop', 'jpak_project_archive_loop' );
+function jpak_project_archive_loop() {
 
+    // Get Project IDs
+    $projects = jpak_project_query();
+
+    // Loop Projects
+    foreach ( $projects as $project ) {
+
+        $project_post = get_post($project);
+
+        echo print_r($project);
+        echo '<br><br>';
+
+
+    } // foreach $projects as $project
+
+} // jpak_project_archive_loop()
 
 
 //-- LOAD FRAMEWORK --//
