@@ -75,14 +75,15 @@ function jpak_project_archive_loop() {
 
         // Wrapper Background
         if ( $project_thumbnail ) {
-            $background_gradient = 'linear-gradient( rgba(0,0,0,0) 65%, rgba(0,0,0,0.8) )';
+            $background_gradient = 'linear-gradient( rgba(0,0,0,0) 55%, rgba(0,0,0,0.9) )';
             $wrapper_background = 'style="background: ' . $background_gradient . ', url(\'' . $project_thumbnail . '\');" ';
         }
 
         // START WRAPPER
         echo '<div class="' . $wrapper_classes . '" ' . $wrapper_background . '>';
 
-
+            // Project Title
+            echo '<h2 class="entry-title" itemprop="headline">' . $project_post->post_title . '</h2>';
 
         echo '</div>'; // Close Project Wrapper
 
