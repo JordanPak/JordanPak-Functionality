@@ -75,7 +75,8 @@ function jpak_project_archive_loop() {
 
         // Wrapper Background
         if ( $project_thumbnail ) {
-            $wrapper_background = 'style="background: url(\'' . $project_thumbnail . '\')" ';
+            $background_gradient = 'linear-gradient( rgba(0,0,0,0) 65%, rgba(0,0,0,0.8) )';
+            $wrapper_background = 'style="background: ' . $background_gradient . ', url(\'' . $project_thumbnail . '\');" ';
         }
 
         // START WRAPPER
