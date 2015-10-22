@@ -68,7 +68,7 @@ function jpak_project_archive_loop() {
         $project_thumbnail =    $project_thumbnail[0];                                                          // Get URL from Stuff
 
         // Wrapper Classes
-        $wrapper_classes = 'entry one-half';    // Defaults
+        $wrapper_classes = 'entry project-grid-entry one-half';    // Defaults
         if ( $count % 2 == 0 ) {                // Check for First
             $wrapper_classes .= ' first';
         }
