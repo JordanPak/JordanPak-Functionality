@@ -56,12 +56,36 @@ function jpak_project_archive_loop() {
 
 
     //-- PROJECT LOOP --//
+    $count = 0;
+
+    // CYCLE PROJECTS
     foreach ( $projects as $project ) {
 
-        // Get Post Data
-        $project_post = get_post($project);
+        // Post Data
+        $project_post =         get_post( $project );
+        $project_thumbnail =    get_post_thumbnail_id( $project );                                              // Get ID of Thumb
+        $project_thumbnail =    wp_get_attachment_image_src( $project_thumbnail, 'project-grid-thumbnail' );    // Get Stuff from ID
+        $project_thumbnail =    $project_thumbnail[0];                                                          // Get URL from Stuff
+
+        // Wrapper Classes
+        $wrapper_classes = 'entry one-half';    // Defaults
+        if ( $count % 2 == 0 ) {                // Check for First
+            $wrapper_classes .= ' first';
+        }
+
+        // Wrapper Background
+        if ( $project_thumbnail ) {
+            $wrapper_background = 'style="background: url(\'' . $project_thumbnail . '\')" ';
+        }
+
+        // START WRAPPER
+        echo '<div class="' . $wrapper_classes . '" ' . $wrapper_background . '>';
 
 
+
+        echo '</div>'; // Close Project Wrapper
+
+        $count++;
 
     } // foreach $projects as $project
 
