@@ -66,6 +66,7 @@ function jpak_project_archive_loop() {
 
             // Post Data
             $project_post =         get_post( $project );
+            $project_title =        $project_post->post_title;
             $project_thumbnail =    get_post_thumbnail_id( $project );                                              // Get ID of Thumb
             $project_thumbnail =    wp_get_attachment_image_src( $project_thumbnail, 'project-grid-thumbnail' );    // Get Stuff from ID
             $project_thumbnail =    $project_thumbnail[0];                                                          // Get URL from Stuff
@@ -76,26 +77,31 @@ function jpak_project_archive_loop() {
                 $wrapper_classes .= ' first';
             }
 
-            // Wrapper Background
-            if ( $project_thumbnail ) {
-                $background_gradient = 'linear-gradient( rgba(0,0,0,0) 55%, rgba(0,0,0,0.9) )';
-                $wrapper_background = 'style="background: ' . $background_gradient . ', url(\'' . $project_thumbnail . '\');" ';
-            }
+            // // Wrapper Background
+            // if ( $project_thumbnail ) {
+            //     $background_gradient = 'linear-gradient( rgba(0,0,0,0) 55%, rgba(0,0,0,0.9) )';
+            //     $wrapper_background = ''; //'style="background: ' . $background_gradient . ', url(\'' . $project_thumbnail . '\');" ';
+            // }
 
-            // Start Link to Project
-            echo '<a href="' . get_permalink( $project ) . '">';
+            ?>
 
-                // START WRAPPER
-                echo '<div class="' . $wrapper_classes . '" ' . $wrapper_background . '>';
+            <!-- Project Wrapper -->
+            <div class="<?php echo $wrapper_classes; ?>">
 
+                <!-- Featured Image -->
+                <img src="<?php echo $project_thumbnail ?>" alt="Project: <?php echo $project_title ?>">
 
-                    // Project Title
-                    echo '<h2 class="entry-title" itemprop="headline">' . $project_post->post_title . '</h2>';
+                <!-- Caption -->
+                <a class="caption" href="<?php echo get_permalink( $project ) ?>">
 
+                    <div class="blur"></div>
+                    <h2 class="entry-title" itemprop="headline"><?php echo $project_title ?></h2>
 
-                echo '</div>'; // Close Project Wrapper
+                </a><!-- / a.caption -->
 
-            echo '</a>'; // Project Link
+            </div><!-- / .project-wrapper -->
+
+            <?php
 
             $count++;
 
