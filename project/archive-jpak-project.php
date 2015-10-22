@@ -59,8 +59,7 @@ function jpak_project_archive_loop() {
 
         $project_post = get_post($project);
 
-        echo print_r($project);
-        echo '<br><br>';
+        echo $project . '<br>';
 
 
     } // foreach $projects as $project

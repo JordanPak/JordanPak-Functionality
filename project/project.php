@@ -199,14 +199,17 @@ function jpak_project_metaboxes() {
      $project_args = array(
          'post_type'        => 'jpak_project',
          'fields'           => 'ids',
-        //  'orderby'          => 'meta_value_num',
-        //  'order'            => 'DSC',
+         'orderby'          => 'meta_value_num',
+         'order'            => 'DSC',
          'post_count'       => 10,
-        //  'posts_per_page'   => $num_per_page,
+         'posts_per_page'   => $num_per_page,
      );
 
      // Query
-     return new WP_Query( $project_args );
+     $projects = new WP_Query( $project_args );
+     $projects = $projects->get_posts();
+
+     return $projects;
 
  } // jpak_project_query()
 
