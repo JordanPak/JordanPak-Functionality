@@ -51,15 +51,16 @@ function jpak_project_archive_body_classes( $classes ) {
 add_action( 'genesis_before_loop', 'jpak_project_archive_loop' );
 function jpak_project_archive_loop() {
 
-    // Get Project IDs
+    //-- GET PROJECTS --//
     $projects = jpak_project_query();
 
-    // Loop Projects
+
+    //-- PROJECT LOOP --//
     foreach ( $projects as $project ) {
 
+        // Get Post Data
         $project_post = get_post($project);
 
-        echo $project . '<br>';
 
 
     } // foreach $projects as $project
