@@ -77,12 +77,6 @@ function jpak_project_archive_loop() {
                 $wrapper_classes .= ' first';
             }
 
-            // // Wrapper Background
-            // if ( $project_thumbnail ) {
-            //     $background_gradient = 'linear-gradient( rgba(0,0,0,0) 55%, rgba(0,0,0,0.9) )';
-            //     $wrapper_background = ''; //'style="background: ' . $background_gradient . ', url(\'' . $project_thumbnail . '\');" ';
-            // }
-
             ?>
 
             <!-- Project Wrapper -->
