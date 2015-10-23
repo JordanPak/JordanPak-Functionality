@@ -93,6 +93,7 @@ function jpak_project_archive_loop() {
 
                     <!-- Title -->
                     <h2 class="entry-title" itemprop="headline"><?php echo $project_title ?></h2>
+                    <p class="entry-subtitle">Entry Subtitle Will Be Here</p>
 
                 </a>
 
