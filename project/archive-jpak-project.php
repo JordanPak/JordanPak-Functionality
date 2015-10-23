@@ -88,16 +88,19 @@ function jpak_project_archive_loop() {
             <!-- Project Wrapper -->
             <div class="<?php echo $wrapper_classes; ?>">
 
-                <!-- Featured Image -->
-                <img src="<?php echo $project_thumbnail ?>" alt="Project: <?php echo $project_title ?>">
+                <!-- LINK -->
+                <a href="<?php echo get_permalink( $project ) ?>" title="Project: <?php echo $project_title?>">
 
-                <!-- Caption -->
-                <a class="caption" href="<?php echo get_permalink( $project ) ?>">
+                    <!-- Featured Image -->
+                    <img src="<?php echo $project_thumbnail ?>" alt="Project: <?php echo $project_title ?>">
 
-                    <div class="blur"></div>
+                    <!-- Fade Above Image -->
+                    <div class="fade"></div>
+
+                    <!-- Title -->
                     <h2 class="entry-title" itemprop="headline"><?php echo $project_title ?></h2>
 
-                </a><!-- / a.caption -->
+                </a>
 
             </div><!-- / .project-wrapper -->
 
