@@ -71,6 +71,9 @@ function jpak_project_archive_loop() {
             $project_thumbnail =    wp_get_attachment_image_src( $project_thumbnail, 'project-grid-thumbnail' );    // Get Stuff from ID
             $project_thumbnail =    $project_thumbnail[0];                                                          // Get URL from Stuff
 
+            // Post MetaData
+            $project_meta = jpak_project_get_meta( $project, true );
+
             // Wrapper Classes
             $wrapper_classes = 'entry project-grid-entry one-half';    // Defaults
             if ( $count % 2 == 0 ) {                // Check for First
@@ -93,7 +96,9 @@ function jpak_project_archive_loop() {
 
                     <!-- Title -->
                     <h2 class="entry-title" itemprop="headline"><?php echo $project_title ?></h2>
-                    <p class="entry-subtitle">Entry Subtitle Will Be Here</p>
+                    <?php if ( $project_meta['subtitle'] ) { ?>
+                        <p class="entry-subtitle"><?php echo $project_meta['subtitle'] ?></p>
+                    <?php } ?>
 
                 </a>
 

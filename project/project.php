@@ -97,14 +97,22 @@ function jpak_project_metaboxes() {
         'show_names'    => true, // Show field names on the left
     ) );
 
-    // Color Picker
+    // Project Subtitle
     $cmb->add_field( array(
-        'name'      => 'Project Color',
-        'desc'      => __( 'Used in page background and button accent.', 'cmb2' ),
-        'id'        => $prefix . 'color',
-        'type'      => 'colorpicker',
-        'default'   => '#ffffff',
+        'name' => 'Subtitle',
+        'desc' => 'Displays on archive page entry hover. Ex: "Custom Genesis Child Theme"',
+        'id' => $prefix . 'subtitle',
+        'type' => 'text'
     ) );
+
+    // Color Picker
+    // $cmb->add_field( array(
+    //     'name'      => 'Project Color',
+    //     'desc'      => __( 'Used in page background and button accent.', 'cmb2' ),
+    //     'id'        => $prefix . 'color',
+    //     'type'      => 'colorpicker',
+    //     'default'   => '#ffffff',
+    // ) );
 
     // Desktop Preview
     $cmb->add_field( array(
@@ -233,6 +241,12 @@ function jpak_project_get_meta( $project, $is_archive = false ) {
 
     // Set Meta ID
     $meta_id_prefix = '_jpak_project_';
+
+
+    // ARCHIVE META //
+    if ( $is_archive ) {
+        $project_meta['subtitle']               = get_post_meta( $project, $meta_id_prefix . 'subtitle', true );
+    }
 
 
     // SINGLE META //
