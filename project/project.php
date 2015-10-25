@@ -114,6 +114,18 @@ function jpak_project_metaboxes() {
         'default'   => '#ffffff',
     ) );
 
+    // Full Image
+    $cmb->add_field( array(
+        'name'    => 'Full Image',
+        'desc'    => 'Recommended Width: 1200px',
+        'id'      => $prefix . 'full_image',
+        'type'    => 'file',
+        'options' => array(
+            'url' => false, // Hide the text input for the url
+            'add_upload_file_text' => 'Upload Image',
+        ),
+    ) );
+
     // Desktop Preview
     $cmb->add_field( array(
         'name'    => 'Desktop Preview Image',
@@ -246,7 +258,7 @@ function jpak_project_get_meta( $project, $is_archive = false ) {
     // ARCHIVE META //
     if ( $is_archive ) {
         $project_meta['subtitle']               = get_post_meta( $project, $meta_id_prefix . 'subtitle', true );
-        $project_meta['color']                  = get_post_meta( $project, $meta_id_prefix . 'color', true );    
+        $project_meta['color']                  = get_post_meta( $project, $meta_id_prefix . 'color', true );
     }
 
 
@@ -254,6 +266,7 @@ function jpak_project_get_meta( $project, $is_archive = false ) {
     if ( $is_archive == false ) {
 
         $project_meta['color']                  = get_post_meta( $project, $meta_id_prefix . 'color', true );
+        $project_meta['full_image']             = get_post_meta( $project, $meta_id_prefix . 'full_image', true );
         $project_meta['desktop_preview']        = get_post_meta( $project, $meta_id_prefix . 'desktop_preview', true );
         $project_meta['mobile_preview']         = get_post_meta( $project, $meta_id_prefix . 'mobile_preview', true );
         $project_meta['features']               = get_post_meta( $project, $meta_id_prefix . 'features', true );
@@ -281,7 +294,7 @@ add_action( 'init', 'jpak_project_image_sizes' );
  * @see jpak_project
  */
 function jpak_project_image_sizes() {
-    add_image_size('project-grid-thumbnail', 600, 380, TRUE);
+    add_image_size( 'project-grid-thumbnail', 600, 380, TRUE );
 } // jpak_project_image_sizes()
 
 

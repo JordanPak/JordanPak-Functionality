@@ -81,7 +81,7 @@ function jpak_project_single_background_previews() {
     $project_meta = $GLOBALS['jpak_project_meta'];
 
     // Prep Needed Vars
-    $color =            $project_meta['color'];
+    $full_image =       $project_meta['full_image'];
     $desktop_preview =  $project_meta['desktop_preview'];
     $mobile_preview =   $project_meta['mobile_preview'];
 
@@ -92,6 +92,11 @@ function jpak_project_single_background_previews() {
 
     // Background & Previews
     echo '<div class="project-background-previews" style="' . $background_previews_style . '">';
+
+        // If There's a Full Image
+        if ( $full_image ) {
+            echo '<img class="project-full-image" src="' . $full_image . '" alt="Project Image">';
+        }
 
         // If There's a Desktop Preview
         if ( $desktop_preview ) {
