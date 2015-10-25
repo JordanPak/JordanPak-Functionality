@@ -96,9 +96,15 @@ function jpak_project_archive_loop() {
 
                     <!-- Title -->
                     <h2 class="entry-title" itemprop="headline"><?php echo $project_title ?></h2>
-                    <?php if ( $project_meta['subtitle'] ) { ?>
-                        <p class="entry-subtitle"><?php echo $project_meta['subtitle'] ?></p>
-                    <?php } ?>
+                    <?php
+                    if ( $project_meta['subtitle'] ) {
+                        echo '<p class="entry-subtitle"';
+                        if ( $project_meta['color'] ) {
+                            echo ' style="color: ' . $project_meta['color'] . '"';
+                        }
+                        echo '>' . $project_meta['subtitle'] . '</p>';
+                    }
+                    ?>
 
                 </a>
 

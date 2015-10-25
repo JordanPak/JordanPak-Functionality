@@ -106,13 +106,13 @@ function jpak_project_metaboxes() {
     ) );
 
     // Color Picker
-    // $cmb->add_field( array(
-    //     'name'      => 'Project Color',
-    //     'desc'      => __( 'Used in page background and button accent.', 'cmb2' ),
-    //     'id'        => $prefix . 'color',
-    //     'type'      => 'colorpicker',
-    //     'default'   => '#ffffff',
-    // ) );
+    $cmb->add_field( array(
+        'name'      => 'Project Color',
+        'desc'      => __( 'Used in page background and button accent.', 'cmb2' ),
+        'id'        => $prefix . 'color',
+        'type'      => 'colorpicker',
+        'default'   => '#ffffff',
+    ) );
 
     // Desktop Preview
     $cmb->add_field( array(
@@ -246,6 +246,7 @@ function jpak_project_get_meta( $project, $is_archive = false ) {
     // ARCHIVE META //
     if ( $is_archive ) {
         $project_meta['subtitle']               = get_post_meta( $project, $meta_id_prefix . 'subtitle', true );
+        $project_meta['color']                  = get_post_meta( $project, $meta_id_prefix . 'color', true );    
     }
 
 
