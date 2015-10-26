@@ -221,7 +221,7 @@ function jpak_project_entry_content() {
 
             // echo '<h3>Features</h3>';
 
-            echo '<ul class="big checkmark">';
+            echo '<ul class="features">';
 
                 foreach ( $features as $feature ) {
                     echo '<li>' . $feature . '</li>';
