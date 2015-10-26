@@ -91,7 +91,7 @@ function jpak_project_single_background_previews() {
 
 
     // Background & Previews
-    echo '<div class="project-background-previews" style="' . $background_previews_style . '">';
+    echo '<div class="project-background-previews" style="' . $background_previews_style . '"><div class="wrap">';
 
         // If There's a Full Image
         if ( $full_image ) {
@@ -108,7 +108,7 @@ function jpak_project_single_background_previews() {
             echo jpak_project_browser_mockup( $mobile_preview, 'mobile', 'right', false );
         }
 
-    echo '</div>'; // .project-background-previews
+    echo '</div></div>'; // .wrap, .project-background-previews
 
 } // jpak_project_single_background_previews()
 
