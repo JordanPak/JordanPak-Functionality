@@ -183,6 +183,7 @@ function jpak_project_header() {
     // Visit Website Button
     if ( $visit_website ) {
         echo '<a class="project-visit-website button button-outline" href="' . $visit_website . '" title="View Live Project" target="_BLANK">Visit Website</a>';
+        echo '<a class="project-visit-website button button-sm button-light" href="' . $visit_website . '" title="View Live Project" target="_BLANK">Visit Website</a>';
     }
 
 } // jpak_project_header()
@@ -242,13 +243,13 @@ function jpak_project_entry_content() {
     echo '<div class="project-buttons">';
 
         // Back to Projects
-        echo '<a class="button button-dark" href="' . site_url() .'/projects"><i class="fa fa-arrow-left"></i>Back to Projects</a>';
+        echo '<a class="button button-dark" href="' . site_url() .'/projects"><i class="fa fa-arrow-left"></i>All Projects</a>';
 
         // OR
         echo '<span>or</span>';
 
         // Contact
-        echo '<a class="button" href="' . site_url() . '/contact"><i class="fa fa-pencil"></i>Get Your Project Started</a>';
+        echo '<a class="button" href="' . site_url() . '/contact"><i class="fa fa-pencil"></i>Start Your Project</a>';
 
     echo '</div>'; // .project-buttons
 
