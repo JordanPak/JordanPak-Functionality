@@ -182,8 +182,7 @@ function jpak_project_header() {
 
     // Visit Website Button
     if ( $visit_website ) {
-        echo '<a class="project-visit-website button button-outline" href="' . $visit_website . '" title="View Live Project" target="_BLANK">Visit Website</a>';
-        echo '<a class="project-visit-website button button-sm button-light" href="' . $visit_website . '" title="View Live Project" target="_BLANK">Visit Website</a>';
+        echo '<a class="project-visit-website button button-light" href="' . $visit_website . '" title="View Live Project" target="_BLANK">Visit Website</a>';
     }
 
 } // jpak_project_header()
